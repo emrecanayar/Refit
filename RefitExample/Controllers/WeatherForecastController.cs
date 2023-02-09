@@ -23,6 +23,7 @@ namespace RefitExample.Controllers
             _postsClient = postsClient;
         }
 
+        //Oluþturduðumuz yapýnýn testini gerçekleþtirmek için oluþturduðumuz action metot.
 
         [HttpGet("GetPostById", Name = "GetPostById")]
         [ProducesResponseType(typeof(PostDto), 200)]
@@ -47,7 +48,7 @@ namespace RefitExample.Controllers
             .ToArray();
         }
 
-       
+
     }
 
 

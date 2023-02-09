@@ -1,5 +1,6 @@
 ﻿namespace RefitExample.Models
 {
+    //İstek yapacağımız end-pointten geriye dönecek olan modeli tutacak olan classımız
     public class PostDto
     {
         public int UserId { get; set; }

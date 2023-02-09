@@ -7,19 +7,19 @@ namespace RefitExample.Concretes
     public class HeaderParameterManager : IHeaderParameterService
     {
         private readonly IConfiguration _configuration;
-        private readonly ILoginService _loginService;
+        private readonly ILoginClient _loginClient;
 
-        public HeaderParameterManager(IConfiguration configuration, ILoginService loginService)
+        public HeaderParameterManager(IConfiguration configuration, ILoginClient loginClient)
         {
             _configuration = configuration;
-            _loginService = loginService;
+            _loginClient = loginClient;
         }
 
         private static string? Token { get; set; }
         public LoginResponseDto GetResponse()
         {
             LoginRequestDto dto = _configuration.GetSection("RefitLogin").Get<LoginRequestDto>();
-            var result = _loginService.Login(dto);
+            var result = _loginClient.Login(dto);
             return result.Result;
         }
 
